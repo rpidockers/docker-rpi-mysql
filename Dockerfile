@@ -1,13 +1,9 @@
 #
-# MySQL Dockerfile
-#
-# https://github.com/dockerfile/mysql
+# jpodeszwik/rpi-mysql Dockerfile
 #
 
-# Pull base image.
-FROM dockerfile/ubuntu
+from sdhibit/rpi-raspbian
 
-# Install MySQL.
 RUN \
   apt-get update && \
   DEBIAN_FRONTEND=noninteractive apt-get install -y mysql-server && \
@@ -31,3 +27,4 @@ CMD ["mysqld_safe"]
 
 # Expose ports.
 EXPOSE 3306
+
